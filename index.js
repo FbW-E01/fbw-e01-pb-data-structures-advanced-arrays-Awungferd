@@ -1,23 +1,41 @@
 /**#### 1. Get total orders
+
+#### 1. Get total orders
 * Return the total amount of orders. 
-*/
+``` */
 
 const orders = [
   { amount: 250 },
   { amount: 400 },
   { amount: 100 },
-  { amount: 325 }
-]
-const summing = orders.entries
-console.log(summing)
+  { amount: 325 },
+];
+const startOrders = 0;
+const totals = orders.reduce(function (acc, curr) {
+  console.log(curr);
+  return acc + curr.amount;
+}, startOrders);
+console.log("The total amount of orders =", totals);
 
-/**#### 2. Increment by 1
+console.log("END NO1")
+//=======================================
+
+/* #### 2. Increment by 1
+
 * Create a function that increments each element in the `arrayOfNumbers` by 1. Return the a new array of modified elements. */
-let numbersToIncrement = [3, 45, 6, 56, 7, 9]
-numbersToIncrement.forEach((numberIncremented, index)=>{
-    console.log("Index", + index+1,  ":",numberIncremented+1)
-})
-console.log("========================")
+
+//WITH .forEach
+const arrayOfNumbers = [3, 45, 6, 56, 7, 9];
+arrayOfNumbers.forEach((element) => {
+  console.log(element + 1);
+});
+//--------WITH .map
+const increased = arrayOfNumbers.map(function (things) {
+  return things + 1;
+});
+console.log("Here we go,", increased);
+console.log("END NO2")
+//========================================
 /**#### 3. Filter Evens
 * Create a function called filterEvens that filters an array and only return even numbers. The function should take an array of numbers as an argument, and should not use a loop. */
 function filterEvens() {
@@ -56,6 +74,7 @@ function filterItems(arr, query) {
     { return item.toLowerCase().indexOf(query.toLowerCase()) !== -1})
     
 }
+console.log("THIS IS NUMBER 4")
 console.log(filterItems(friends, "ri"))
 console.log(filterItems(friends, "e"))
 console.log(filterItems(friends, "a"))
