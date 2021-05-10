@@ -10,7 +10,7 @@ const orders = [
   { amount: 100 },
   { amount: 325 }
 ];
-```
+
 
 #### 2. Increment by 1
 ```javascript 
